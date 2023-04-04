@@ -8,7 +8,8 @@
 #### (1) Host annotation and result visualization of contigs with MMSeqs2
 
 ##### Step1:
-```# Before searching, you need to convert your FASTA file containing query sequences into a sequence DB（contigs.fasta-->queryDB）
+```
+# Before searching, you need to convert your FASTA file containing query sequences into a sequence DB（contigs.fasta-->queryDB）
 Conmmands: 
 mmseqs createdb <i:contigs.fasta> <o:queryDB>
 mmseqs createdb  # module of MMseq2
