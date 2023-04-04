@@ -4,3 +4,9 @@
 ### (2) Clustering sequence data
 ### (3) Extract ORF
 ###（4）and so on ···
+
+
+
+MMSeq2
+contigs注释(以L1-B4为例/使用SSU数据库-SILVA)
+'mmseqs creatDB'
