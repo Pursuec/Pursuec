@@ -12,9 +12,9 @@
 # Before searching, you need to convert your FASTA file containing query sequences into a sequence DB（contigs.fasta-->queryDB）
 Conmmands: 
 mmseqs createdb <i:contigs.fasta> <o:queryDB>
- mmseqs createdb  # module of MMseq2
- <contigs.fasta>  # contigs file in FASTA format
- <queryDB>  # sequence DB's prefix
+> mmseqs createdb  # module of MMseq2
+> <contigs.fasta>  # contigs file in FASTA format
+> <queryDB>  # sequence DB's prefix
 
 Result：This step should generate eight files ：queryDB, queryDB_h and its corresponding index file queryDB.index
 E：queryDB、queryDB.dbtype、queryDB.index、queryDB.lookup、queryDB.source、queryDB_h、queryDB_h.dbtype、queryDB_h.index
