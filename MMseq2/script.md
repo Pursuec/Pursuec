@@ -54,7 +54,7 @@ mmseqs createtsv # module of MMseq2
 ##### Step5:
 ```
 # Annotation results can be converted to the Kraken result style
-# The report file can be visualized in the `https://github.com/fbreitwieser/pavian`
+# The report file can be visualized in the [pavian](https://github.com/fbreitwieser/pavian)
 Commands:
 mmseqs taxonomyreport <i:path/to/seqTaxDB> <i:taxonomyResult> <o:taxonomyResult_report>
 mmseqs taxonomyreport # module of MMseq2
