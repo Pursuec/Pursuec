@@ -33,7 +33,7 @@ tmp  # process cache file
 ```
 # Taxonomy(annotate) contigs：
 Conmmands:
-mmseqs taxonomy <i:path/to/queryDB> <i:path/to/seqTaxDB> <o:taxonomyResult> tmp <options>
+mmseqs taxonomy <i:path/to/queryDB> <i:path/to/seqTaxDB> <o:taxonomyResult> tmp <--options>
 mmseqs taxonomy  # module of MMseq2
 <i:path/to/queryDB>  # step1's queryDB
 <i:path/to/seqTaxDB>  # step2's seqTaxDB
@@ -41,4 +41,34 @@ mmseqs taxonomy  # module of MMseq2
 tmp  # process cache file
 <options>  # other options
 ```
-
+##### Step4:
+```
+# Convert result files to tsv format (i.e. format and consolidate all taxonomyResult.xxx files)
+Commands:
+mmseqs createtsv <i:path/to/queryDB> <i:taxonomyResult> <o:taxonomyResult.tsv>
+mmseqs createtsv # module of MMseq2
+<i:path/to/queryDB> # step1's queryDB
+<i:taxonomyResult> # step'3 result file prefix
+<o:taxonomyResult.tsv> # tsv格式的汇总文件
+```
+##### Step5:
+```
+# Annotation results can be converted to the Kraken result style
+# The report file can be visualized in the `https://github.com/fbreitwieser/pavian`
+Commands:
+mmseqs taxonomyreport <i:path/to/seqTaxDB> <i:taxonomyResult> <o:taxonomyResult_report>
+mmseqs taxonomyreport # module of MMseq2
+<i:path/to/seqTaxDB>  # step2's seqTaxDB
+<i:taxonomyResult> # step'3 result file prefix
+<o:taxonomyResult_report> # annotated result file for Kraken result style
+```
+##### Step6:
+```
+# Result visualization (generate html file)
+Commands:
+mmseqs taxonomyreport <i:path/to/seqTaxDB> <i:taxonomyResult> <o: report.html> <--options>
+mmseqs taxonomyreport # module of MMseq2
+<i:path/to/seqTaxDB>  # step2's seqTaxDB
+<i:taxonomyResult> # step'3 result file prefix
+<o: report.html> # visualize html files
+```
