@@ -6,6 +6,7 @@
 ### (4) and so on ···
 >->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 #### (1) Host annotation and result visualization of contigs with MMSeqs2
+#### <!>：Annotation results will be relative to the selected seqTaxDB database
 
 ##### Step1:
 ```
