@@ -111,12 +111,17 @@ mmseqs lincluster <i:queryDB> <o:clusterDB> tmp <--options>
 ##### Step3:
 ```
 # Extract representative sequences from the clustering results that is deduplicated sequences
-<1> relatively accurate clustering
 Conmmands:
-mmseqs createseqfiledb <i:queryDB> <i:clusterDB> <o:DB_clu_seq>
-mmseqs createseqfiledb # module of MMseq2
+(1)
+mmseqs createseqfiledb <i:queryDB> <i:clusterDB> <o:DB_clu_seq> tmp
+mmseqs createseqfiledb  # module of MMseq2
 <queryDB>  # sequence DB's prefix
-<clusterDB> # cluster result file prefix
-<o:DB_clu_seq> # deduplicated sequences
+<clusterDB>  # cluster result file prefix
+<DB_clu_seq>  # progress file of deduplicated sequences 
 
-<2> relatively fast clustering
+(2)
+mmseqs result2flat <i:queryDB> <i:queryDB> <i:DB_clu_seq> <o:DB_clu_seq.fasta>
+mmseqs result2flat # module of MMseq2
+<queryDB>  # sequence DB's prefix
+<DB_clu_seq>  # progress file of deduplicated sequences 
+<DB_clu_seq.fasta> deduplicated sequences result
