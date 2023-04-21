@@ -73,3 +73,50 @@ mmseqs taxonomyreport # module of MMseq2
 <i:taxonomyResult> # step'3 result file prefix
 <o: report.html> # visualize html files
 ```
+>->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
+#### (2) Clustering with MMSeqs2
+
+##### Step1:
+```
+# Before searching, you need to convert your FASTA file containing query sequences into a sequence DB（contigs.fasta-->queryDB）
+Conmmands: 
+mmseqs createdb <i:contigs.fasta> <o:queryDB> tmp
+mmseqs createdb  # module of MMseq2
+<contigs.fasta>  # contigs file in FASTA format
+<queryDB>  # sequence DB's prefix
+
+Result：This step should generate eight files ：queryDB, queryDB_h and its corresponding index file queryDB.index
+E：queryDB、queryDB.dbtype、queryDB.index、queryDB.lookup、queryDB.source、queryDB_h、queryDB_h.dbtype、queryDB_h.index
+```
+##### Step2:
+```
+# Clustering
+
+<1> relatively accurate clustering
+Conmmands:
+mmseqs cluster <i:queryDB> <o:clusterDB> tmp <--options>
+# mmseqs cluster  # module of MMseq2
+<queryDB>  # sequence DB's prefix
+<clusterDB> # cluster result file prefix
+<--options> # Restrictive parameters
+
+<2> relatively fast clustering
+Conmmands:
+mmseqs lincluster <i:queryDB> <o:clusterDB> tmp <--options>
+# mmseqs lincluster  # module of MMseq2
+<queryDB>  # sequence DB's prefix
+<clusterDB> # cluster result file prefix
+<--options> # Restrictive parameters
+```
+##### Step3:
+```
+# Extract representative sequences from the clustering results that is deduplicated sequences
+<1> relatively accurate clustering
+Conmmands:
+mmseqs createseqfiledb <i:queryDB> <i:clusterDB> <o:DB_clu_seq>
+mmseqs createseqfiledb # module of MMseq2
+<queryDB>  # sequence DB's prefix
+<clusterDB> # cluster result file prefix
+<o:DB_clu_seq> # deduplicated sequences
+
+<2> relatively fast clustering
